@@ -1,0 +1,11 @@
+name: Security
+on:
+  push:
+    branches: [main, master]
+  schedule:
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  scan:
+    uses: ulises2k/security-workflows/.github/workflows/trivy-reusable.yml@main
